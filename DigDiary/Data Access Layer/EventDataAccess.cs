@@ -17,9 +17,9 @@ namespace DigDiary.Data_Access_Layer
         }
         public DiaryEvent GetEventDetails(string eventTitle)
         {
-            string sql = "SELECT * FROM Categories WHERE EventTitle='" + eventTitle + "'";
+            string sql = "SELECT * FROM DIARYEVENTS WHERE EventTitle='" + eventTitle + "'";
             SqlDataReader reader = this.dataAccess.GetData(sql);
-            DiaryEvent diaryEvents = new DiaryEvent();
+            
             reader.Read();
             DiaryEvent diaryEvent = new DiaryEvent();
             diaryEvent.EventTitle = reader["EventTitle"].ToString();
@@ -29,7 +29,7 @@ namespace DigDiary.Data_Access_Layer
             diaryEvent.Mood = reader["Mood"].ToString();
             diaryEvent.Importance = reader["Importance"].ToString();
             diaryEvent.UserId = (int)reader["UserId"];
-            return diaryEvents;
+            return diaryEvent;
         }
         public List<TitleDate> GetTitleDate(int id)
         {

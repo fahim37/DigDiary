@@ -34,5 +34,10 @@ namespace DigDiary.Logic_Layer
             eventDataAccess = new EventDataAccess();
             return eventDataAccess.CreateEvent(diaryEvent);
         }
+        public DiaryEvent GetEventDetailss(string eventTitle)
+        {
+            return this.eventDataAccess.GetEventDetails(eventTitle);
+        }
+
     }
 }

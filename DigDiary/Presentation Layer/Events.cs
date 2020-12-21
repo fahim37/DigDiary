@@ -14,6 +14,11 @@ namespace DigDiary.Presentation_Layer
 {
     public partial class Events : Form
     {
+        public TextBox ViewEventTextBox
+        {
+            get { return viewEventTextBox; }
+        }
+
         public Events()
         {
             InitializeComponent();
@@ -35,6 +40,18 @@ namespace DigDiary.Presentation_Layer
             CreateEvent createEvent = new CreateEvent();
             createEvent.Show();
             this.Hide();
+        }
+
+        private void titleDateDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            toModifyTextBox.Text = titleDateDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            viewEventTextBox.Text = titleDateDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+        }
+
+        private void ViewEventButton_Click(object sender, EventArgs e)
+        {
+            EventDetails eventDetails = new EventDetails(this);
+            eventDetails.Show();
         }
     }
 }
