@@ -44,6 +44,7 @@ namespace DigDiary.Presentation_Layer
             this.deleteButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.deleteEventTextBox = new System.Windows.Forms.TextBox();
+            this.logOutButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.titleDateDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -207,11 +208,24 @@ namespace DigDiary.Presentation_Layer
             this.deleteEventTextBox.Size = new System.Drawing.Size(228, 22);
             this.deleteEventTextBox.TabIndex = 0;
             // 
+            // logOutButton
+            // 
+            this.logOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutButton.ForeColor = System.Drawing.Color.Red;
+            this.logOutButton.Location = new System.Drawing.Point(655, 12);
+            this.logOutButton.Name = "logOutButton";
+            this.logOutButton.Size = new System.Drawing.Size(133, 23);
+            this.logOutButton.TabIndex = 6;
+            this.logOutButton.Text = "Log Out";
+            this.logOutButton.UseVisualStyleBackColor = true;
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
+            // 
             // Events
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 659);
+            this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -252,5 +266,6 @@ namespace DigDiary.Presentation_Layer
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox deleteEventTextBox;
+        private System.Windows.Forms.Button logOutButton;
     }
 }

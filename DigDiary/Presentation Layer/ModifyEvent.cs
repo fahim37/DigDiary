@@ -38,19 +38,39 @@ namespace DigDiary.Presentation_Layer
 
         private void modifyButton_Click(object sender, EventArgs e)
         {
-            EventService eventService = new EventService();
-            int result = eventService.ModifyEventDetails(modifyTitleTextBox.Text, modifyDescriptionTextBox.Text, modifyDateTimePicker.Text, modifyMoodComboBox.Text, modifyImportanceComboBox.Text,eveTitle);
-            if (result > 0)
+            if (modifyTitleTextBox.Text == "")
             {
-                MessageBox.Show("Event Modified successfully");
-                Events events = new Events();
-                events.Show();
-                this.Hide();
+                MessageBox.Show("Event title can not be empty");
+            }
+            else if (modifyDescriptionTextBox.Text == "")
+            {
+                MessageBox.Show("Description is empty");
+            }
+            else if (modifyMoodComboBox.Text == "")
+            {
+                MessageBox.Show("Mood is not selected");
+            }
+            else if (modifyImportanceComboBox.Text == "")
+            {
+                MessageBox.Show("Importance is not selected");
             }
             else
             {
-                MessageBox.Show("Error in Modifying Event");
+                EventService eventService = new EventService();
+                int result = eventService.ModifyEventDetails(modifyTitleTextBox.Text, modifyDescriptionTextBox.Text, modifyDateTimePicker.Text, modifyMoodComboBox.Text, modifyImportanceComboBox.Text, eveTitle);
+                if (result > 0)
+                {
+                    MessageBox.Show("Event Modified successfully");
+                    Events events = new Events();
+                    events.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Error in Modifying Event");
+                }
             }
+            
         }
     }
 }

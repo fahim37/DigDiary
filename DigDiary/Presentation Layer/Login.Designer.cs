@@ -47,6 +47,7 @@ namespace DigDiary.Presentation_Layer
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(185, 207);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(175, 20);
             this.passwordTextBox.TabIndex = 1;
             // 

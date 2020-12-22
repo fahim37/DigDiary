@@ -87,5 +87,12 @@ namespace DigDiary.Presentation_Layer
                 MessageBox.Show("Error in deleting category");
             }
         }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
     }
 }
