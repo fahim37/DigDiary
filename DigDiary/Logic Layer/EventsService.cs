@@ -38,10 +38,11 @@ namespace DigDiary.Logic_Layer
         {
             return this.eventDataAccess.GetEventDetails(eventTitle);
         }
-        public int ModifyEventDetails(string description, string modifyDate, string mood, string importance)
+        public int ModifyEventDetails(string eventTitle, string description, string modifyDate, string mood, string importance)
         {
             DiaryEvent diaryEvent = new DiaryEvent()
             {
+                EventTitle = eventTitle,
                 Description = description,
                 ModificationDate = modifyDate,
                 Mood = mood,
@@ -49,6 +50,10 @@ namespace DigDiary.Logic_Layer
             };
             eventDataAccess = new EventDataAccess();
             return eventDataAccess.UpdateEvent(diaryEvent);
+        }
+        public int RemoveEvent(string eventTitle)
+        {
+            return this.eventDataAccess.DeleteEvent(eventTitle);
         }
 
     }

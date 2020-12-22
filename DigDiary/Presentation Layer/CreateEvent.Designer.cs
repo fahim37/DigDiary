@@ -168,6 +168,7 @@ namespace DigDiary.Presentation_Layer
             this.Controls.Add(this.descriptionTextBox);
             this.Controls.Add(this.eventTitleTextBox);
             this.Name = "CreateEvent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateEvent";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateEvent_FormClosing);
             this.ResumeLayout(false);

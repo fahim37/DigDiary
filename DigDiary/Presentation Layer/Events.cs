@@ -22,6 +22,8 @@ namespace DigDiary.Presentation_Layer
         public Events()
         {
             InitializeComponent();
+            deleteButton.Click += this.RefreshGridView;
+            deleteButton.Click += this.ClearFields;
         }
 
         private void Events_FormClosing(object sender, FormClosingEventArgs e)
@@ -33,6 +35,15 @@ namespace DigDiary.Presentation_Layer
         {
             EventService eventService = new EventService();
             titleDateDataGridView.DataSource = eventService.GetTitleDatelist(MyGlobals.userId);
+        }
+        void RefreshGridView(object sender, EventArgs e)
+        {
+            EventService eventService = new EventService();
+            titleDateDataGridView.DataSource = eventService.GetTitleDatelist(MyGlobals.userId);
+        }
+        void ClearFields(object sender, EventArgs e)
+        {
+            deleteEventTextBox.Text = toModifyTextBox.Text = viewEventTextBox.Text = string.Empty;
         }
 
         private void createEventbutton_Click(object sender, EventArgs e)
@@ -61,6 +72,20 @@ namespace DigDiary.Presentation_Layer
             ModifyEvent modifyEvent = new ModifyEvent(this);
             modifyEvent.Show();
             this.Hide();
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            EventService eventService = new EventService();
+            int result = eventService.RemoveEvent(deleteEventTextBox.Text);
+            if (result > 0)
+            {
+                MessageBox.Show("Category deleted successfully");
+            }
+            else
+            {
+                MessageBox.Show("Error in deleting category");
+            }
         }
     }
 }
