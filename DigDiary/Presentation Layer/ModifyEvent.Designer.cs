@@ -39,7 +39,7 @@ namespace DigDiary.Presentation_Layer
             this.modifyDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.modifyMoodComboBox = new System.Windows.Forms.ComboBox();
             this.modifyImportanceComboBox = new System.Windows.Forms.ComboBox();
-            this.eventTitleLebel = new System.Windows.Forms.Label();
+            this.modifyTitleTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // modifyButton
@@ -149,22 +149,19 @@ namespace DigDiary.Presentation_Layer
             this.modifyImportanceComboBox.Size = new System.Drawing.Size(256, 21);
             this.modifyImportanceComboBox.TabIndex = 29;
             // 
-            // eventTitleLebel
+            // modifyTitleTextBox
             // 
-            this.eventTitleLebel.AutoSize = true;
-            this.eventTitleLebel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventTitleLebel.Location = new System.Drawing.Point(134, 64);
-            this.eventTitleLebel.Name = "eventTitleLebel";
-            this.eventTitleLebel.Size = new System.Drawing.Size(45, 16);
-            this.eventTitleLebel.TabIndex = 30;
-            this.eventTitleLebel.Text = "label4";
+            this.modifyTitleTextBox.Location = new System.Drawing.Point(134, 63);
+            this.modifyTitleTextBox.Name = "modifyTitleTextBox";
+            this.modifyTitleTextBox.Size = new System.Drawing.Size(409, 20);
+            this.modifyTitleTextBox.TabIndex = 31;
             // 
             // ModifyEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(626, 615);
-            this.Controls.Add(this.eventTitleLebel);
+            this.Controls.Add(this.modifyTitleTextBox);
             this.Controls.Add(this.modifyImportanceComboBox);
             this.Controls.Add(this.modifyMoodComboBox);
             this.Controls.Add(this.modifyDateTimePicker);
@@ -197,6 +194,6 @@ namespace DigDiary.Presentation_Layer
         private System.Windows.Forms.DateTimePicker modifyDateTimePicker;
         private System.Windows.Forms.ComboBox modifyMoodComboBox;
         private System.Windows.Forms.ComboBox modifyImportanceComboBox;
-        private System.Windows.Forms.Label eventTitleLebel;
+        private System.Windows.Forms.TextBox modifyTitleTextBox;
     }
 }

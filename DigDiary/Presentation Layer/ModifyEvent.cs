@@ -30,7 +30,7 @@ namespace DigDiary.Presentation_Layer
             EventService eventService = new EventService();
             DiaryEvent diaryEvent = new DiaryEvent();
             diaryEvent = eventService.GetEventDetailss(eveTitle);
-            eventTitleLebel.Text = diaryEvent.EventTitle;
+            modifyTitleTextBox.Text = diaryEvent.EventTitle;
             modifyDescriptionTextBox.Text = diaryEvent.Description;
             modifyMoodComboBox.Text = diaryEvent.Mood;
             modifyImportanceComboBox.Text = diaryEvent.Importance;
@@ -39,7 +39,7 @@ namespace DigDiary.Presentation_Layer
         private void modifyButton_Click(object sender, EventArgs e)
         {
             EventService eventService = new EventService();
-            int result = eventService.ModifyEventDetails(eventTitleLebel.Text, modifyDescriptionTextBox.Text, modifyDateTimePicker.Text, modifyMoodComboBox.Text, modifyImportanceComboBox.Text);
+            int result = eventService.ModifyEventDetails(modifyTitleTextBox.Text, modifyDescriptionTextBox.Text, modifyDateTimePicker.Text, modifyMoodComboBox.Text, modifyImportanceComboBox.Text,eveTitle);
             if (result > 0)
             {
                 MessageBox.Show("Event Modified successfully");

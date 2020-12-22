@@ -50,9 +50,9 @@ namespace DigDiary.Data_Access_Layer
             string sql = "INSERT INTO DIARYEVENTS (EventTitle,Description,CreationDate,ModificationDate,Mood,Importance,UserId) VALUES('" + diaryEvent.EventTitle + "','" + diaryEvent.Description + "','" + diaryEvent.CreationDate + "','" + diaryEvent.ModificationDate + "','" + diaryEvent.Mood + "','" + diaryEvent.Importance + "'," + diaryEvent.UserId + ")";
             return this.dataAccess.ExecuteQuery(sql);
         }
-        public int UpdateEvent(DiaryEvent diaryEvent)
+        public int UpdateEvent(DiaryEvent diaryEvent,string eveTitle)
         {
-            string sql = "UPDATE DiaryEvents SET Description='" + diaryEvent.Description + "',ModificationDate='" + diaryEvent.ModificationDate + "',Mood='"+ diaryEvent.Mood +"',Importance='"+ diaryEvent.Importance +"' WHERE EventTitle= '"+ diaryEvent.EventTitle+"'";
+            string sql = "UPDATE DiaryEvents SET EventTitle='" + diaryEvent.EventTitle + "',Description='" + diaryEvent.Description + "',ModificationDate='" + diaryEvent.ModificationDate + "',Mood='"+ diaryEvent.Mood +"',Importance='"+ diaryEvent.Importance +"' WHERE EventTitle= '"+ eveTitle+"'";
             int result = this.dataAccess.ExecuteQuery(sql);
             return result;
         }
