@@ -172,7 +172,7 @@ namespace DigDiary.Presentation_Layer
             // 
             this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backButton.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.backButton.Location = new System.Drawing.Point(196, 449);
+            this.backButton.Location = new System.Drawing.Point(220, 447);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(131, 55);
             this.backButton.TabIndex = 12;

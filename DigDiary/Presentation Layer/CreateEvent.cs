@@ -1,4 +1,6 @@
-﻿using DigDiary.Logic_Layer;
+﻿using DigDiary.Data_Access_Layer;
+using DigDiary.Entities;
+using DigDiary.Logic_Layer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +27,7 @@ namespace DigDiary.Presentation_Layer
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             if (eventTitleTextBox.Text == "")
             {
                 MessageBox.Show("Event title can not be empty");
