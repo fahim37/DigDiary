@@ -46,12 +46,21 @@ namespace DigDiary.Presentation_Layer
         {
             toModifyTextBox.Text = titleDateDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
             viewEventTextBox.Text = titleDateDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            deleteEventTextBox.Text = titleDateDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
 
         private void ViewEventButton_Click(object sender, EventArgs e)
         {
             EventDetails eventDetails = new EventDetails(this);
             eventDetails.Show();
+            this.Hide();
+        }
+
+        private void modifyButton_Click(object sender, EventArgs e)
+        {
+            ModifyEvent modifyEvent = new ModifyEvent(this);
+            modifyEvent.Show();
+            this.Hide();
         }
     }
 }

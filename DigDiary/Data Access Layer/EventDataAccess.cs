@@ -52,11 +52,11 @@ namespace DigDiary.Data_Access_Layer
         }
         public int UpdateEvent(DiaryEvent diaryEvent)
         {
-            string sql = "UPDATE DiaryEvents SET EventTitle='" + diaryEvent.EventTitle + "',Description='" + diaryEvent.Description + "',ModificationDate='" + diaryEvent.ModificationDate + "' WHERE EventTitle=" + diaryEvent.EventTitle;
+            string sql = "UPDATE DiaryEvents SET Description='" + diaryEvent.Description + "',ModificationDate='" + diaryEvent.ModificationDate + "',Mood='"+ diaryEvent.Mood +"',Importance='"+ diaryEvent.Importance +"' WHERE EventTitle= '"+ diaryEvent.EventTitle+"'";
             int result = this.dataAccess.ExecuteQuery(sql);
             return result;
         }
-        public int DeleteCategory(string eventTitle)
+        public int DeleteEvent(string eventTitle)
         {
             string sql = "DELETE FROM DiaryEvents WHERE EventTitle= '" + eventTitle + "'";
             int result = this.dataAccess.ExecuteQuery(sql);

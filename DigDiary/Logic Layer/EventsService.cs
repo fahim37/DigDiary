@@ -38,6 +38,18 @@ namespace DigDiary.Logic_Layer
         {
             return this.eventDataAccess.GetEventDetails(eventTitle);
         }
+        public int ModifyEventDetails(string description, string modifyDate, string mood, string importance)
+        {
+            DiaryEvent diaryEvent = new DiaryEvent()
+            {
+                Description = description,
+                ModificationDate = modifyDate,
+                Mood = mood,
+                Importance = importance,
+            };
+            eventDataAccess = new EventDataAccess();
+            return eventDataAccess.UpdateEvent(diaryEvent);
+        }
 
     }
 }

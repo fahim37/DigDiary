@@ -33,23 +33,31 @@ namespace DigDiary.Presentation_Layer
             this.label1 = new System.Windows.Forms.Label();
             this.createEventbutton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.toModifyTextBox = new System.Windows.Forms.TextBox();
+            this.modifyButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.modifyOpenButton = new System.Windows.Forms.Button();
+            this.toModifyTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ViewEventButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.viewEventTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.deleteEventTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.titleDateDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // titleDateDataGridView
             // 
+            this.titleDateDataGridView.AllowUserToAddRows = false;
+            this.titleDateDataGridView.AllowUserToDeleteRows = false;
             this.titleDateDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.titleDateDataGridView.Location = new System.Drawing.Point(40, 68);
             this.titleDateDataGridView.Name = "titleDateDataGridView";
+            this.titleDateDataGridView.ReadOnly = true;
             this.titleDateDataGridView.Size = new System.Drawing.Size(275, 331);
             this.titleDateDataGridView.TabIndex = 0;
             this.titleDateDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.titleDateDataGridView_CellClick);
@@ -78,23 +86,28 @@ namespace DigDiary.Presentation_Layer
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.modifyOpenButton);
+            this.groupBox1.Controls.Add(this.modifyButton);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.toModifyTextBox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(380, 160);
+            this.groupBox1.Location = new System.Drawing.Point(40, 437);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(367, 182);
+            this.groupBox1.Size = new System.Drawing.Size(335, 174);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modify Event";
             // 
-            // toModifyTextBox
+            // modifyButton
             // 
-            this.toModifyTextBox.Location = new System.Drawing.Point(102, 54);
-            this.toModifyTextBox.Name = "toModifyTextBox";
-            this.toModifyTextBox.Size = new System.Drawing.Size(243, 22);
-            this.toModifyTextBox.TabIndex = 0;
+            this.modifyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modifyButton.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.modifyButton.Location = new System.Drawing.Point(102, 105);
+            this.modifyButton.Name = "modifyButton";
+            this.modifyButton.Size = new System.Drawing.Size(228, 39);
+            this.modifyButton.TabIndex = 2;
+            this.modifyButton.Text = "Modify";
+            this.modifyButton.UseVisualStyleBackColor = true;
+            this.modifyButton.Click += new System.EventHandler(this.modifyButton_Click);
             // 
             // label2
             // 
@@ -105,16 +118,12 @@ namespace DigDiary.Presentation_Layer
             this.label2.TabIndex = 1;
             this.label2.Text = "Event Title";
             // 
-            // modifyOpenButton
+            // toModifyTextBox
             // 
-            this.modifyOpenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modifyOpenButton.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.modifyOpenButton.Location = new System.Drawing.Point(102, 105);
-            this.modifyOpenButton.Name = "modifyOpenButton";
-            this.modifyOpenButton.Size = new System.Drawing.Size(242, 39);
-            this.modifyOpenButton.TabIndex = 2;
-            this.modifyOpenButton.Text = "Open";
-            this.modifyOpenButton.UseVisualStyleBackColor = true;
+            this.toModifyTextBox.Location = new System.Drawing.Point(102, 54);
+            this.toModifyTextBox.Name = "toModifyTextBox";
+            this.toModifyTextBox.Size = new System.Drawing.Size(228, 22);
+            this.toModifyTextBox.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -122,9 +131,9 @@ namespace DigDiary.Presentation_Layer
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.viewEventTextBox);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(380, 387);
+            this.groupBox2.Location = new System.Drawing.Point(382, 155);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(367, 182);
+            this.groupBox2.Size = new System.Drawing.Size(363, 221);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "View Event Details";
@@ -132,7 +141,7 @@ namespace DigDiary.Presentation_Layer
             // ViewEventButton
             // 
             this.ViewEventButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewEventButton.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.ViewEventButton.ForeColor = System.Drawing.SystemColors.Highlight;
             this.ViewEventButton.Location = new System.Drawing.Point(102, 105);
             this.ViewEventButton.Name = "ViewEventButton";
             this.ViewEventButton.Size = new System.Drawing.Size(242, 39);
@@ -157,11 +166,52 @@ namespace DigDiary.Presentation_Layer
             this.viewEventTextBox.Size = new System.Drawing.Size(243, 22);
             this.viewEventTextBox.TabIndex = 0;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.deleteButton);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.deleteEventTextBox);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(410, 437);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(335, 174);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Delete Event";
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteButton.ForeColor = System.Drawing.Color.Red;
+            this.deleteButton.Location = new System.Drawing.Point(102, 105);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(228, 39);
+            this.deleteButton.TabIndex = 2;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 54);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 16);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Event Title";
+            // 
+            // deleteEventTextBox
+            // 
+            this.deleteEventTextBox.Location = new System.Drawing.Point(102, 54);
+            this.deleteEventTextBox.Name = "deleteEventTextBox";
+            this.deleteEventTextBox.Size = new System.Drawing.Size(228, 22);
+            this.deleteEventTextBox.TabIndex = 0;
+            // 
             // Events
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 659);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.createEventbutton);
@@ -177,6 +227,8 @@ namespace DigDiary.Presentation_Layer
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,12 +240,16 @@ namespace DigDiary.Presentation_Layer
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button createEventbutton;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button modifyOpenButton;
+        private System.Windows.Forms.Button modifyButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox toModifyTextBox;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button ViewEventButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox viewEventTextBox;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox deleteEventTextBox;
     }
 }

@@ -19,7 +19,6 @@ namespace DigDiary.Presentation_Layer
         {
             InitializeComponent();
             evTitle = ev.ViewEventTextBox.Text;
-            //label1.Text = ev.ViewEventTextBox.Text;
         }
 
         private void EventDetails_FormClosing(object sender, FormClosingEventArgs e)
@@ -32,9 +31,19 @@ namespace DigDiary.Presentation_Layer
             EventService eventService = new EventService();
             DiaryEvent diaryEvent = new DiaryEvent();
             diaryEvent = eventService.GetEventDetailss(evTitle);
-            label1.Text = diaryEvent.EventTitle;
-            detailsDescriptionTextBox.Text = diaryEvent.Description;
+            eventTitleLebel.Text = diaryEvent.EventTitle;
+            descriptionTextBox.Text = diaryEvent.Description;
+            createdLabel.Text = diaryEvent.CreationDate;
+            ModifiedLabel.Text = diaryEvent.ModificationDate;
+            moodLebel.Text = diaryEvent.Mood;
+            importanceLebel.Text = diaryEvent.Importance;
+        }
 
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            Events events = new Events();
+            events.Show();
+            this.Hide();
         }
     }
 }
