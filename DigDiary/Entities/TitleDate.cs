@@ -10,5 +10,6 @@ namespace DigDiary.Entities
     {
         public string EventTitle { get; set; }
         public string CreationDate { get; set; }
+        public string Importance { get; set; }
     }
 }
